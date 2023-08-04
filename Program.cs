@@ -5,8 +5,6 @@ using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 
-
-
 Stopwatch stopwatch = new Stopwatch();
 List<int> numbers1 = new List<int>(1000000);
 stopwatch.Start();
@@ -28,7 +26,7 @@ List<int> divisibleby777 = numbers1.FindAll(i => i % 777 == 0);
 divisibleby777.ForEach(Console.WriteLine);
 stopwatch.Stop();
 Console.WriteLine("время поиска элементов, которые делятся на 777 в List " + stopwatch.ElapsedMilliseconds + " ms, Ticks: " + stopwatch.ElapsedTicks);
-Console.WriteLine("-----------");
+Console.WriteLine("---------------------------------------");
 
 ArrayList numbers2 = new ArrayList();
 stopwatch.Start();
@@ -36,6 +34,7 @@ for (int i = 1; i <= 1000000; i++)
     numbers2.Add(i);
 stopwatch.Stop();
 Console.WriteLine("время заполнения ArrayList " + stopwatch.ElapsedMilliseconds + " ms, Ticks: " + stopwatch.ElapsedTicks);
+
 Console.WriteLine("Поиск элемента с индексом 496753 в ArrayList: ");
 stopwatch.Start();
 var elem496753al = numbers2[496753];
@@ -50,7 +49,7 @@ foreach (object obj in numbers2)
         Console.WriteLine(number);
 stopwatch.Stop();
 Console.WriteLine("время поиска элементов, которые делятся на 777 в ArrayList " + stopwatch.ElapsedMilliseconds + " ms, Ticks: " + stopwatch.ElapsedTicks);
-Console.WriteLine("-----------");
+Console.WriteLine("---------------------------------------");
 
 
 LinkedList<int> numbers3 = new LinkedList<int>(); ;
@@ -59,12 +58,14 @@ for (int i = 1; i <= 1000000; i++)
     numbers3.AddLast(i);
 stopwatch.Stop();
 Console.WriteLine("время заполнения LinkedList: " + stopwatch.ElapsedMilliseconds + " ms, Ticks: " + stopwatch.ElapsedTicks);
+
 Console.WriteLine("Поиск элемента с индексом 496753: ");
 stopwatch.Start();
 var elem496753ll = numbers3.ElementAt(496753);
 Console.WriteLine(elem496753ll);
 stopwatch.Stop();
 Console.WriteLine("время поиска элемента с индексом 496753 в LinkedList: " + stopwatch.ElapsedMilliseconds + " ms, Ticks: " + stopwatch.ElapsedTicks);
+
 Console.WriteLine("делятся на 777 в LinkedList: ");
 List<int> divisibleBy777ll = new List<int>();
 stopwatch.Start();
@@ -76,4 +77,4 @@ Console.WriteLine("Числа, делящиеся на 777 в LinkedList: ");
 foreach (int num in divisibleBy777ll)
     Console.WriteLine(num);
 Console.WriteLine("время поиска элементов, которые делятся на 777 в LinkedList: " + stopwatch.ElapsedMilliseconds + " ms, Ticks: " + stopwatch.ElapsedTicks);
-Console.WriteLine("-----------");
+Console.WriteLine("---------------------------------------");
